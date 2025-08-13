@@ -3,18 +3,9 @@ import { FaDice } from 'react-icons/fa';
 import Button from './components/Button';
 import Footer from './components/Footer';
 
-const diceImages = [
-  '/assets/dice1.png',
-  '/assets/dice2.png',
-  '/assets/dice3.png',
-  '/assets/dice4.png',
-  '/assets/dice5.png',
-  '/assets/dice6.png',
-];
-
 function App() {
-  const [imagePOne, setImagePOne] = useState(diceImages[5]);
-  const [imagePTwo, setImagePTwo] = useState(diceImages[0]);
+  const [imagePOne, setImagePOne] = useState('./assets/dice6.png');
+  const [imagePTwo, setImagePTwo] = useState('./assets/dice1.png');
   const [message, setMessage] = useState('Hello!');
   const [btnText, setBtnText] = useState('Roll a dice!');
 
@@ -23,21 +14,21 @@ function App() {
     setBtnText('Rolling...');
 
     const interval = setInterval(() => {
-      const tempRoll1 = Math.floor(Math.random() * 6);
-      const tempRoll2 = Math.floor(Math.random() * 6);
+      const tempRoll1 = Math.floor(Math.random() * 6) + 1;
+      const tempRoll2 = Math.floor(Math.random() * 6) + 1;
 
-      setImagePOne(diceImages[tempRoll1]);
-      setImagePTwo(diceImages[tempRoll2]);
+      setImagePOne(`./assets/dice${tempRoll1}.png`);
+      setImagePTwo(`./assets/dice${tempRoll2}.png`);
     }, 100);
 
     setTimeout(() => {
       clearInterval(interval);
 
-      const finalRoll1 = Math.floor(Math.random() * 6);
-      const finalRoll2 = Math.floor(Math.random() * 6);
+      const finalRoll1 = Math.floor(Math.random() * 6) + 1;
+      const finalRoll2 = Math.floor(Math.random() * 6) + 1;
 
-      setImagePOne(diceImages[finalRoll1]);
-      setImagePTwo(diceImages[finalRoll2]);
+      setImagePOne(`./assets/dice${finalRoll1}.png`);
+      setImagePTwo(`./assets/dice${finalRoll2}.png`);
       setBtnText('Roll again!');
 
       if (finalRoll1 > finalRoll2) {
