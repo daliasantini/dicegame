@@ -3,14 +3,22 @@ import { FaDice } from 'react-icons/fa';
 import Button from './components/Button';
 import Footer from './components/Footer';
 
-import dice1 from './assets/dice1.png';
-import dice2 from './assets/dice2.png';
-import dice3 from './assets/dice3.png';
-import dice4 from './assets/dice4.png';
-import dice5 from './assets/dice5.png';
-import dice6 from './assets/dice6.png';
+// import dice1 from './assets/dice1.png';
+// import dice2 from './assets/dice2.png';
+// import dice3 from './assets/dice3.png';
+// import dice4 from './assets/dice4.png';
+// import dice5 from './assets/dice5.png';
+// import dice6 from './assets/dice6.png';
 
-const diceImages = [dice1, dice2, dice3, dice4, dice5, dice6];
+const diceImages = [
+  '/assets/dice1.png',
+  '/assets/dice2.png',
+  '/assets/dice3.png',
+  '/assets/dice4.png',
+  '/assets/dice5.png',
+  '/assets/dice6.png'
+];
+
 
 function App() {
   const [imagePOne, setImagePOne] = useState(dice6);
