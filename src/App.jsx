@@ -3,6 +3,7 @@ import { FaDice } from 'react-icons/fa';
 import Button from './components/Button';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   const [imagePOne, setImagePOne] = useState('./assets/dice6.png');
@@ -90,6 +91,7 @@ function App() {
         <Footer></Footer>
       </div>
     </ErrorBoundary>
+    // <ErrorPage/>
   );
 }
 
