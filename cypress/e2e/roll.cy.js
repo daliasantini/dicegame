@@ -33,10 +33,10 @@ describe('Rolling', () => {
   it('shows correct message depending on dice rolls', () => {
     cy.getByCy('roll-btn').click();
 
-    cy.getByCy('message', { timeout: 5000 })
-      .invoke('text')
-      .then((msg) => {
-        expect(['P1 Wins!', 'P2 Wins!', 'Draw!']).to.include(msg);
-      });
+    //Retry until message === expected value
+    cy.getByCy('message', { timeout: 5000 }).should(($msg) => {
+      const text = $msg.text().trim();
+      expect(['P1 Wins!', 'P2 Wins!', 'Draw!']).to.include(text);
+    });
   });
 });
