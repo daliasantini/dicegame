@@ -1,7 +1,9 @@
 describe('Rolling', () => {
-  it('clicking + triggers dice reroll (images randomization)', () => {
-    cy.visit('https://dice-game-2d3b5.web.app');
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
+  it('clicking + triggers dice reroll (images randomization)', () => {
     //Store initial dice values
     cy.getByCy('dice1').invoke('attr', 'src').as('firstSrc1');
     cy.getByCy('dice2').invoke('attr', 'src').as('firstSrc2');
@@ -29,8 +31,6 @@ describe('Rolling', () => {
   });
 
   it('shows correct message depending on dice rolls', () => {
-    cy.visit('https://dice-game-2d3b5.web.app');
-
     cy.getByCy('roll-btn').click();
 
     cy.getByCy('message', { timeout: 5000 })
