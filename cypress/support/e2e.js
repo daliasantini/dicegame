@@ -1,1 +1,1 @@
-import './commands/getByCy';
+import './commands;
