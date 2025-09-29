@@ -1,9 +1,0 @@
-Cypress.Commands.add("getByCy", (selector, ...args) => {
-  return cy.get(`[data-cy="${selector}"]`, ...args);
-});
-
-
-
-// Cypress.Commands.add('getByCy', (id) => {
-//   return cy.get(`[data-cy="${id}"]`);
-// });
